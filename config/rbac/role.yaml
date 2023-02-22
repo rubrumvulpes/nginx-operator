@@ -1,0 +1,69 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  creationTimestamp: null
+  name: manager-role
+rules:
+- apiGroups:
+  - webserver.cisco.davidkertesz.hu
+  resources:
+  - deployments
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - webserver.cisco.davidkertesz.hu
+  resources:
+  - deployments/status
+  verbs:
+  - get
+- apiGroups:
+  - webserver.cisco.davidkertesz.hu
+  resources:
+  - nginxes
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - webserver.cisco.davidkertesz.hu
+  resources:
+  - nginxes/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - webserver.cisco.davidkertesz.hu
+  resources:
+  - nginxes/status
+  verbs:
+  - get
+  - patch
+  - update
+- apiGroups:
+  - webserver.cisco.davidkertesz.hu
+  resources:
+  - services
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - webserver.cisco.davidkertesz.hu
+  resources:
+  - services/status
+  verbs:
+  - get

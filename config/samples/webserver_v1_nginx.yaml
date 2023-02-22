@@ -1,0 +1,14 @@
+apiVersion: webserver.cisco.davidkertesz.hu/v1
+kind: Nginx
+metadata:
+  labels:
+    app.kubernetes.io/name: nginx
+    app.kubernetes.io/instance: nginx-sample
+    app.kubernetes.io/part-of: nginx-operator
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/created-by: nginx-operator
+  name: nginx-sample
+spec:
+  image: "nginx:latest"
+  replicas: 3
+  host: "defunct.as.of.now"
