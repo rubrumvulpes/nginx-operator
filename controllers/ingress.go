@@ -56,8 +56,9 @@ func (reconciler *NginxReconciler) createIngressManifest(controller *webserverv1
 	prefixPathType := networkingv1.PathTypePrefix
 	ingressManifest := &networkingv1.Ingress{
 		ObjectMeta: metav1.ObjectMeta{
-			Name:      "nginx-operator-ingress",
-			Namespace: controller.Namespace,
+			Name:        "nginx-operator-ingress",
+			Namespace:   controller.Namespace,
+			Annotations: map[string]string{"cert-manager.io/cluster-issuer": "letsencrypt-staging"},
 		},
 		Spec: networkingv1.IngressSpec{
 			IngressClassName: &ingressClass,
