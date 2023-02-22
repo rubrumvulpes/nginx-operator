@@ -76,7 +76,7 @@ jobs:
       #     cache-to: type=gha,mode=max
 
       - name: Build and Push Docker image to ghcr.io
-        run: make docker-build docker-push IMG=/${{ env.IMAGE_NAME }}:${{ steps.meta.outputs.tags }}
+        run: make docker-build docker-push IMG=${{ steps.meta.outputs.tags }}
 
       # Sign the resulting Docker image digest except on PRs.
       # This will only write to the public Rekor transparency log when the Docker
