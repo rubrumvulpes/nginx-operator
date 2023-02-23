@@ -46,4 +46,4 @@ jobs:
 
       # Use kubebuilder's own make manifest to build and push to GHCR
       - name: Build and Push Docker image to ghcr.io
-        run: make docker-build docker-push IMG=${{ steps.meta.outputs.tags }}
+        run: make manifests docker-build docker-push IMG=${{ steps.meta.outputs.tags }}
