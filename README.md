@@ -102,10 +102,11 @@ The cert-manager will watch the Ingress resource that has `letsencrypt-staging` 
 
 5. Create your connection to your cluster, ensure the presence of a configuration file at '~/.kube/config'.
 
-6. Clone this repository. Using the Makefile, deploy the image to your cluster.
+6. Clone this repository. Using the Makefile, deploy the operator to your cluster.
 
 ```sh
-make deploy IMG=ghcr.io/rubrumvulpes/nginx-operator:main
+make install
+make run
 ```
 
 7. Create the manifest for the Nginx resource and apply to your cluster.
