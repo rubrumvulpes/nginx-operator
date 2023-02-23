@@ -105,8 +105,7 @@ The cert-manager will watch the Ingress resource that has `letsencrypt-staging` 
 6. Clone this repository. Using the Makefile, deploy the operator to your cluster.
 
 ```sh
-make install
-make run
+make deploy IMG=ghcr.io/rubrumvulpes/nginx-operator:main
 ```
 
 7. Create the manifest for the Nginx resource and apply to your cluster.
